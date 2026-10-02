@@ -2,100 +2,87 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>提出物確認画面</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="page">
+  <h1>④提出物確認画面</h1>
 
-    <h1>④提出物確認画面</h1>
+  <!-- 提出物 -->
+  <div class="section">
+    <h2>🔴 提出物</h2>
 
-    <div class="container">
-
-      <!-- 左側 -->
-      <div class="left-area">
-
-        <!-- 提出物 -->
-        <section class="submission-section">
-
-          <h2>
-            <span class="circle red"></span>
-            提出物
-          </h2>
-
-          <div id="taskList"></div>
-
-        </section>
-
-
-        <!-- 提出済み -->
-        <section class="submitted-section">
-
-          <h2>
-            <span class="circle blue"></span>
-            提出済み
-          </h2>
-
-          <div id="submittedList" class="scroll-area"></div>
-
-        </section>
-
+    <div class="task">
+      <div>
+        <p>数学ワーク</p>
+        <span>9/16まで　あと1日</span>
       </div>
 
-
-      <!-- 右側 -->
-      <div class="right-area">
-
-        <!-- 提出遅れ -->
-        <section class="late-section">
-
-          <h2>
-            <span class="circle yellow"></span>
-            提出遅れ
-          </h2>
-
-          <div id="lateList"></div>
-
-        </section>
-
-
-        <!-- 履歴 -->
-        <section class="history-section">
-
-          <h3>提出履歴</h3>
-
-          <div id="historyList"></div>
-
-        </section>
-
-      </div>
-
+      <button onclick="addSubmitted('数学ワーク')">
+        提出済みに追加
+      </button>
     </div>
 
+    <div class="task">
+      <div>
+        <p>英語プリント</p>
+        <span>9/19まで　あと4日</span>
+      </div>
+
+      <button onclick="addSubmitted('英語プリント')">
+        提出済みに追加
+      </button>
+    </div>
   </div>
 
 
-  <!-- 確認ダイアログ -->
-  <div id="modal" class="modal hidden">
+  <!-- 提出済み -->
+  <div class="section">
+    <h2>🔵 提出済み</h2>
 
-    <div class="modal-content">
-
-      <h2 id="modalTitle">確認</h2>
-
-      <div id="modalText"></div>
-
-      <button id="closeModal">閉じる</button>
-
+    <div id="submittedList">
+      <!-- JavaScriptで追加される -->
     </div>
-
   </div>
 
 
-  <!-- メッセージ -->
-  <div id="message" class="message"></div>
+  <!-- 提出遅れ -->
+  <div class="section">
+    <h2>🟡 提出遅れ</h2>
+
+    <div class="late-task">
+
+      <div>
+        <p>歴史ノート</p>
+        <span>9/14　1日遅れ</span>
+      </div>
+
+      <button onclick="lateSubmit('歴史ノート')">
+        遅れて提出
+      </button>
+
+      <button onclick="showConfirm('歴史ノート')">
+        確認
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- 確認画面 -->
+  <div id="confirmScreen" class="confirm-screen">
+
+    <h2>確認</h2>
+
+    <p id="confirmText"></p>
+
+    <button onclick="back()">
+      戻る
+    </button>
+
+  </div>
 
 
   <script src="script.js"></script>
