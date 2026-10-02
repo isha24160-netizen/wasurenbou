@@ -15,12 +15,9 @@ body {
 .screen {
     width: 900px;
     min-height: 550px;
-
-    margin: 30px auto;
+    margin: 4px auto;
     padding: 20px 30px;
-
     border: 1px solid #888;
-
     position: relative;
 }
 
@@ -29,30 +26,25 @@ body {
 
 h1 {
     margin: 0 0 35px;
-
-    font-size: 25px;
+    font-size: 28px;
     font-weight: normal;
 }
 
 
-/* 上の3つのボタン */
+/* ホーム画面 */
 
 .menu {
     display: flex;
     justify-content: space-around;
-
-    margin-bottom: 25px;
+    margin-top: 35px;
 }
 
 .menu button {
     width: 180px;
     height: 55px;
-
     border: 1px solid #999;
     background-color: #eeeeee;
-
     font-size: 19px;
-
     cursor: pointer;
 }
 
@@ -61,68 +53,16 @@ h1 {
 }
 
 
-/* 3つのカード */
-
-.contents {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 30px;
-}
-
-
-.card {
-    width: 30%;
-    height: 260px;
-
-    border: 1px solid #999;
-
-    position: relative;
-
-    padding: 45px 20px 45px;
-
-    font-size: 17px;
-}
-
-
-/* 通知 */
-
-.notice {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-
-    min-height: 38px;
-
-    padding: 9px 5px;
-
-    background-color: #f39a9a;
-
-    text-align: center;
-
-    font-size: 14px;
-}
-
-
 /* 戻るボタン */
 
 .back-button {
     display: block;
-
     width: 85px;
     height: 43px;
-
-    margin: 8px auto 0;
-
+    margin: 290px auto 0;
     border: 1px solid #999;
     background-color: #eeeeee;
-
-    font-size: 16px;
-
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -131,64 +71,116 @@ h1 {
 }
 
 
-/* フォーム */
+/* 提出物画面 */
 
-.form {
-    width: 500px;
-
-    margin: 0 auto;
-}
-
-
-.form label {
-    display: block;
-
-    margin-bottom: 20px;
-
-    font-size: 18px;
-}
-
-
-.form input {
-    display: block;
-
+.detail-box {
     width: 100%;
-    height: 42px;
+    border: 1px solid #555;
+    min-height: 330px;
+}
 
-    margin-top: 7px;
+.detail-header {
+    height: 60px;
+    border-bottom: 1px solid #777;
+    padding: 12px 20px;
+    font-size: 25px;
+}
 
-    padding: 8px;
-
-    border: 1px solid #999;
-
-    font-size: 16px;
+.detail-list {
+    padding: 15px 20px;
+    font-size: 23px;
+    line-height: 2.2;
 }
 
 
-/* 登録ボタン */
+/* 持ち物画面 */
 
-.register-button {
+.belongings-box {
+    width: 100%;
+    min-height: 410px;
+    border: 1px solid #555;
+    display: flex;
+}
+
+.belongings-column {
+    width: 50%;
+    position: relative;
+}
+
+.belongings-column:first-child {
+    border-right: 1px solid #777;
+}
+
+
+/* 「学校から」「自分で追加」 */
+
+.column-title {
+    height: 60px;
+    border-bottom: 1px solid #777;
+    padding: 12px 25px;
+    font-size: 25px;
+}
+
+
+/* 持ち物一覧 */
+
+.belongings-list {
+    padding: 12px 25px;
+    font-size: 23px;
+    line-height: 2.2;
+}
+
+
+/* 持ち物1個 */
+
+.belonging-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+
+/* 自分で追加した持ち物 */
+
+.my-item {
+    margin-bottom: 5px;
+}
+
+
+/* 削除ボタン */
+
+.delete-button {
+    border: none;
+    background: none;
+    font-size: 21px;
+    color: #333;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.delete-button:hover {
+    text-decoration: underline;
+}
+
+
+/* ＋追加 */
+
+.add-button {
     display: block;
-
-    width: 120px;
-    height: 45px;
-
-    margin: 30px auto;
-
-    border: 1px solid #999;
-    background-color: #eeeeee;
-
-    font-size: 17px;
-
+    margin: 20px auto;
+    border: none;
+    background: none;
+    font-size: 23px;
     cursor: pointer;
 }
 
-.register-button:hover {
-    background-color: #dddddd;
+.add-button:hover {
+    text-decoration: underline;
 }
 
 
-/* フォームを隠す */
+/* 非表示 */
 
 .hidden {
     display: none;
