@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提出物確認画面</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="page">
+
+    <h1>④提出物確認画面</h1>
+
+    <div class="container">
+
+      <!-- 左側 -->
+      <div class="left-area">
+
+        <!-- 提出物 -->
+        <section class="submission-section">
+
+          <h2>
+            <span class="circle red"></span>
+            提出物
+          </h2>
+
+          <div id="taskList"></div>
+
+        </section>
+
+
+        <!-- 提出済み -->
+        <section class="submitted-section">
+
+          <h2>
+            <span class="circle blue"></span>
+            提出済み
+          </h2>
+
+          <div id="submittedList" class="scroll-area"></div>
+
+        </section>
+
+      </div>
+
+
+      <!-- 右側 -->
+      <div class="right-area">
+
+        <!-- 提出遅れ -->
+        <section class="late-section">
+
+          <h2>
+            <span class="circle yellow"></span>
+            提出遅れ
+          </h2>
+
+          <div id="lateList"></div>
+
+        </section>
+
+
+        <!-- 履歴 -->
+        <section class="history-section">
+
+          <h3>提出履歴</h3>
+
+          <div id="historyList"></div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- 確認ダイアログ -->
+  <div id="modal" class="modal hidden">
+
+    <div class="modal-content">
+
+      <h2 id="modalTitle">確認</h2>
+
+      <div id="modalText"></div>
+
+      <button id="closeModal">閉じる</button>
+
+    </div>
+
+  </div>
+
+
+  <!-- メッセージ -->
+  <div id="message" class="message"></div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
