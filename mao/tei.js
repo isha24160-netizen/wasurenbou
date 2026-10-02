@@ -1,26 +1,24 @@
-// 提出済みに追加
 function addSubmitted(name, taskId) {
 
-  // 提出物を取得
+  // 元の提出物を取得
   const task = document.getElementById(taskId);
 
-  // 提出物から削除
+  // 元の提出物を消す
   task.remove();
 
   // 提出済みの場所を取得
   const submittedList =
     document.getElementById("submittedList");
 
-  // 新しい提出済みを作る
+  // 提出済みの項目を作る
   const item = document.createElement("div");
 
   item.className = "submitted-item";
 
   item.innerHTML = `
-    <div>
-      <p>${name}</p>
-      <span>提出済み</span>
-    </div>
+    <p>${name}</p>
+
+    <span>提出済み</span>
 
     <button onclick="returnTask(this, '${name}')">
       提出物に戻す
@@ -32,10 +30,9 @@ function addSubmitted(name, taskId) {
 }
 
 
-// 提出物に戻す
 function returnTask(button, name) {
 
-  // 提出済みから削除
+  // 「提出物に戻す」ボタンがある項目を削除
   const item = button.parentElement;
 
   item.remove();
@@ -44,7 +41,7 @@ function returnTask(button, name) {
   const taskList =
     document.getElementById("taskList");
 
-  // 新しい提出物を作る
+  // 提出物を作り直す
   const task = document.createElement("div");
 
   task.className = "task";
@@ -52,6 +49,7 @@ function returnTask(button, name) {
   task.innerHTML = `
     <div>
       <p>${name}</p>
+      <span>提出物</span>
     </div>
 
     <button onclick="addSubmittedFromReturn(this, '${name}')">
@@ -59,30 +57,29 @@ function returnTask(button, name) {
     </button>
   `;
 
-  // 提出物に追加
+  // 提出物に戻す
   taskList.appendChild(task);
 }
 
 
-// 戻した提出物を再び提出する
 function addSubmittedFromReturn(button, name) {
 
-  const task = button.parentElement;
+  // 提出物から削除
+  button.parentElement.remove();
 
-  task.remove();
-
+  // 提出済みの場所
   const submittedList =
     document.getElementById("submittedList");
 
+  // 提出済みを作る
   const item = document.createElement("div");
 
   item.className = "submitted-item";
 
   item.innerHTML = `
-    <div>
-      <p>${name}</p>
-      <span>提出済み</span>
-    </div>
+    <p>${name}</p>
+
+    <span>提出済み</span>
 
     <button onclick="returnTask(this, '${name}')">
       提出物に戻す
