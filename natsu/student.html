@@ -4,123 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一般生徒ホーム画面</title>
-
     <link rel="stylesheet" href="student.css">
 </head>
 
 <body>
 
-    <!-- 一般生徒ホーム画面 -->
+    <!-- ③ 一般生徒ホーム画面 -->
     <div id="homeScreen" class="screen">
 
         <h1>③ 一般生徒ホーム画面</h1>
 
         <div class="menu">
-
-            <button onclick="openForm('submission')">
-                🔴 提出物
-            </button>
-
-            <button onclick="openForm('test')">
-                ✏️ 近日のテスト
-            </button>
-
-            <button onclick="openForm('belongings')">
-                🎒 持ち物
-            </button>
-
+            <button onclick="showSubmission()">🔴 提出物</button>
+            <button onclick="showBelongings()">🎒 持ち物</button>
         </div>
 
-
-        <div class="contents">
-
-            <!-- 提出物 -->
-            <div class="card">
-
-                <div id="submissionList">
-                    登録した提出物がここに表示されます
-                </div>
-
-                <div class="notice">
-                    一週間前・３日前・前日に通知
-                </div>
-
-            </div>
-
-
-            <!-- テスト -->
-            <div class="card">
-
-                <div id="testList">
-                    登録したテストがここに表示されます
-                </div>
-
-                <div class="notice">
-                    ３日前・前日に通知
-                </div>
-
-            </div>
-
-
-            <!-- 持ち物 -->
-            <div class="card">
-
-                <div id="belongingsList">
-                    登録した持ち物がここに表示されます
-                </div>
-
-                <div class="notice">
-                    前日に通知
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <button class="back-button" onclick="goLogin()">
-            戻る
-        </button>
+        <button class="back-button" onclick="goLogin()">戻る</button>
 
     </div>
 
 
+    <!-- 提出物確認画面 -->
+    <div id="submissionScreen" class="screen hidden">
 
-    <!-- 登録フォーム画面 -->
-    <div id="formScreen" class="screen hidden">
+        <h1>⑤提出物確認画面</h1>
 
-        <h1 id="formTitle">登録</h1>
+        <div class="detail-box">
 
-        <div class="form">
+            <div class="detail-header">
+                学校から
+            </div>
 
-            <label>
-                教科
-                <input type="text" id="subject">
-            </label>
-
-
-            <label>
-                内容
-                <input type="text" id="content">
-            </label>
-
-
-            <label>
-                日付
-                <input type="date" id="date">
-            </label>
-
-
-            <button class="register-button" onclick="register()">
-                登録
-            </button>
+            <div id="submissionList" class="detail-list">
+                <!-- 提出物がここに表示される -->
+            </div>
 
         </div>
 
+        <button class="back-button" onclick="backHome()">戻る</button>
 
-        <button class="back-button" onclick="backHome()">
-            戻る
-        </button>
+    </div>
+
+
+    <!-- ⑥ 持ち物確認画面 -->
+    <div id="belongingsScreen" class="screen hidden">
+
+        <h1>⑥持ち物確認画面</h1>
+
+        <div class="belongings-box">
+
+            <!-- 学校から -->
+            <div class="belongings-column">
+
+                <div class="column-title">
+                    学校から
+                </div>
+
+                <div id="schoolBelongingsList" class="belongings-list">
+                    <!-- 学校からの持ち物 -->
+                </div>
+
+            </div>
+
+
+            <!-- 自分で追加 -->
+            <div class="belongings-column">
+
+                <div class="column-title">
+                    自分で追加
+                </div>
+
+                <div id="myBelongingsList" class="belongings-list">
+                    <!-- 自分で追加した持ち物 -->
+                </div>
+
+                <button class="add-button" onclick="addBelonging()">
+                    【＋追加】
+                </button>
+
+            </div>
+
+        </div>
+
+        <button class="back-button" onclick="backHome()">戻る</button>
 
     </div>
 
