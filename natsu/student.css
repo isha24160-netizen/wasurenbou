@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: Arial, "Noto Sans JP", sans-serif;
+    color: #222;
+}
+
+
+/* 画面全体 */
+
+.screen {
+    width: 900px;
+    min-height: 550px;
+
+    margin: 30px auto;
+    padding: 20px 30px;
+
+    border: 1px solid #888;
+
+    position: relative;
+}
+
+
+/* タイトル */
+
+h1 {
+    margin: 0 0 35px;
+
+    font-size: 25px;
+    font-weight: normal;
+}
+
+
+/* 上の3つのボタン */
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+
+    margin-bottom: 25px;
+}
+
+.menu button {
+    width: 180px;
+    height: 55px;
+
+    border: 1px solid #999;
+    background-color: #eeeeee;
+
+    font-size: 19px;
+
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background-color: #dddddd;
+}
+
+
+/* 3つのカード */
+
+.contents {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.card {
+    width: 30%;
+    height: 260px;
+
+    border: 1px solid #999;
+
+    position: relative;
+
+    padding: 45px 20px 45px;
+
+    font-size: 17px;
+}
+
+
+/* 通知 */
+
+.notice {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    min-height: 38px;
+
+    padding: 9px 5px;
+
+    background-color: #f39a9a;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* 戻るボタン */
+
+.back-button {
+    display: block;
+
+    width: 85px;
+    height: 43px;
+
+    margin: 8px auto 0;
+
+    border: 1px solid #999;
+    background-color: #eeeeee;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #dddddd;
+}
+
+
+/* フォーム */
+
+.form {
+    width: 500px;
+
+    margin: 0 auto;
+}
+
+
+.form label {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 18px;
+}
+
+
+.form input {
+    display: block;
+
+    width: 100%;
+    height: 42px;
+
+    margin-top: 7px;
+
+    padding: 8px;
+
+    border: 1px solid #999;
+
+    font-size: 16px;
+}
+
+
+/* 登録ボタン */
+
+.register-button {
+    display: block;
+
+    width: 120px;
+    height: 45px;
+
+    margin: 30px auto;
+
+    border: 1px solid #999;
+    background-color: #eeeeee;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: #dddddd;
+}
+
+
+/* フォームを隠す */
+
+.hidden {
+    display: none;
+}
