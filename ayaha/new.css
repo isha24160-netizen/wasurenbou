@@ -42,11 +42,23 @@ label[for="name"] {
   display: none;
 }
 
-/* ログインリンクを隠す */
-.login-link {
-  display: none;
+
+/* ログイン画面へのリンク */
+.register-container {
+  flex-direction: column;
 }
 
+.login-link {
+  display: block;
+  margin-top: 18px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.login-link a {
+  color: #0066cc;
+  text-decoration: underline;
+}
 /* 入力フォーム全体 */
 #registerForm {
   width: 100%;
