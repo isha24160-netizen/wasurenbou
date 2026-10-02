@@ -1,7 +1,78 @@
 // 提出済みに追加
-function addSubmitted(name) {
+function addSubmitted(name, taskId) {
 
-  const list = document.getElementById("submittedList");
+  // 提出物を取得
+  const task = document.getElementById(taskId);
+
+  // 提出物から削除
+  task.remove();
+
+  // 提出済みの場所を取得
+  const submittedList =
+    document.getElementById("submittedList");
+
+  // 新しい提出済みを作る
+  const item = document.createElement("div");
+
+  item.className = "submitted-item";
+
+  item.innerHTML = `
+    <div>
+      <p>${name}</p>
+      <span>提出済み</span>
+    </div>
+
+    <button onclick="returnTask(this, '${name}')">
+      提出物に戻す
+    </button>
+  `;
+
+  // 提出済みに追加
+  submittedList.appendChild(item);
+}
+
+
+// 提出物に戻す
+function returnTask(button, name) {
+
+  // 提出済みから削除
+  const item = button.parentElement;
+
+  item.remove();
+
+  // 提出物の場所
+  const taskList =
+    document.getElementById("taskList");
+
+  // 新しい提出物を作る
+  const task = document.createElement("div");
+
+  task.className = "task";
+
+  task.innerHTML = `
+    <div>
+      <p>${name}</p>
+    </div>
+
+    <button onclick="addSubmittedFromReturn(this, '${name}')">
+      提出済みに追加
+    </button>
+  `;
+
+  // 提出物に追加
+  taskList.appendChild(task);
+}
+
+
+// 戻した提出物を再び提出する
+function addSubmittedFromReturn(button, name) {
+
+  const task = button.parentElement;
+
+  task.remove();
+
+  const submittedList =
+    document.getElementById("submittedList");
 
   const item = document.createElement("div");
 
@@ -18,68 +89,5 @@ function addSubmitted(name) {
     </button>
   `;
 
-  list.appendChild(item);
-}
-
-
-// 提出物に戻す
-function returnTask(button, name) {
-
-  // ボタンが入っている提出済みの項目を削除
-  const item = button.parentElement;
-
-  item.remove();
-
-  alert(name + "を提出物に戻しました");
-}
-
-
-// 遅れて提出
-function lateSubmit(name) {
-
-  const list = document.getElementById("submittedList");
-
-  const item = document.createElement("div");
-
-  item.className = "submitted-item";
-
-  item.innerHTML = `
-    <div>
-      <p>${name}</p>
-      <span>期限後に提出</span>
-    </div>
-
-    <button onclick="returnTask(this, '${name}')">
-      提出物に戻す
-    </button>
-  `;
-
-  list.appendChild(item);
-
-  alert(name + "を遅れて提出しました");
-}
-
-
-// 確認
-function showConfirm(name) {
-
-  const screen =
-    document.getElementById("confirmScreen");
-
-  const text =
-    document.getElementById("confirmText");
-
-  text.textContent =
-    name + "は提出期限を過ぎています。";
-
-  screen.style.display = "block";
-}
-
-
-// 戻る
-function back() {
-
-  document
-    .getElementById("confirmScreen")
-    .style.display = "none";
+  submittedList.appendChild(item);
 }
